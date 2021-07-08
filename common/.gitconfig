@@ -1,0 +1,48 @@
+##############################################################################
+# Git config file, save as `$HOME/.gitconfig`.
+##############################################################################
+
+[core]
+	editor = code --wait
+	eol = lf
+	autocrlf = input
+[init]
+	defaultBranch = main
+[user]
+	name = PotatoMaster101
+	email = PotatoMaster101@users.noreply.github.com
+[diff]
+	tool = vscode
+[difftool]
+	prompt = false
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+	tool = vscode
+[mergetool]
+	keepBackup = false
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+[alias]
+	a = add
+	b = branch
+	f = fetch
+	l = log
+	s = status
+	t = tag
+	aa = add -A
+	cl = clone
+	cm = commit
+	co = checkout
+	df = diff
+	dt = difftool
+	la = log --all
+	ll = log -1 --stat
+	mt = mergetool
+	rh = reset --hard
+	rs = restore
+	rv = remote -v
+	sw = switch
+	cob = checkout -B
+	cmam = commit -am
+	force = push origin main -f

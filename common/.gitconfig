@@ -1,0 +1,184 @@
+[alias]
+  # add
+  a = add
+  aa = add -A
+  aam = !git add -A && git commit -am
+  ap = add -p
+
+  # branch
+  b = branch
+  bd = branch -D
+  bm = branch -m
+  br = branch -r
+  bu = branch -u
+
+  # checkout
+  co = checkout
+  cob = checkout -b
+  cobm = checkout --track origin/main -b
+
+  # cherry-pick
+  cp = cherry-pick
+  cpa = cherry-pick --abort
+  cpc = cherry-pick --continue
+  cpn = cherry-pick -n
+  cpq = cherry-pick --quit
+  cps = cherry-pick --skip
+  cpx = cherry-pick -x
+
+  # clean
+  ccc = clean -f -d
+  cccc = clean -f -d -x
+
+  # clone
+  cl = clone --recurse-submodules
+
+  # commit
+  c = commit
+  ca = commit -a
+  cad = commit -a --amend
+  cadn = commit -a --amend --no-edit
+  caf = commit -a --fixup
+  cam = commit -am
+  cd = commit --amend
+  cdn = commit --amend --no-edit
+  cf = commit --fixup
+  cm = commit -m
+
+  # diff
+  df = diff
+  dt = difftool
+
+  # log
+  l = log --reverse --oneline --date=format:'%d/%m/%Y' --pretty=log
+  lf = log --reverse --oneline --date=format:'%d/%m/%Y' --pretty=log --follow
+  lg = log --reverse --oneline --date=format:'%d/%m/%Y' --pretty=log -i --grep
+  ll = log --reverse --oneline --date=format:'%d/%m/%Y' --pretty=log -50 --no-merges
+
+  # merge
+  mt = mergetool
+
+  # pull
+  pl = pull --no-recurse-submodules
+  plm = pull origin main --no-recurse-submodules
+  plmn = pull origin main --no-recurse-submodules --no-rebase
+  pln = pull --no-recurse-submodules --no-rebase
+
+  # push
+  ps = push
+  psf = push -f origin HEAD
+  psu = push -u origin HEAD
+
+  # rebase
+  rb = rebase
+  rba = rebase --abort
+  rbc = rebase --continue
+  rbi = rebase -i
+  rbq = rebase --quit
+
+  # reflog
+  rl = reflog --pretty=reflog
+  rll = reflog --pretty=reflog -20
+
+  # remote
+  radd = remote add
+  rset = remote set-url
+  rv = remote -v
+
+  # reset
+  r = reset
+  rh = reset --hard
+
+  # show
+  sh = show
+  shq = show --oneline --date=format:'%d/%m/%Y' --pretty=log --name-status
+
+  # status
+  s = status
+
+  # stash
+  sta = stash apply
+  std = stash drop
+  stl = stash list
+  stp = stash pop
+  stu = stash -u
+
+  # submodule
+  sb = submodule
+  sbu = submodule update --rebase --remote
+
+  # tag
+  t = tag
+[blame]
+  coloring = highlightRecent
+  date = format:%d/%m/%Y
+[branch]
+  autoSetupMerge = always
+  autoSetupRebase = always
+[clean]
+  requireForce = false
+[commit]
+  gpgSign = true
+[core]
+  autocrlf = input
+  editor = code --wait
+  eol = lf
+  pager = cat
+[diff]
+  tool = vscode
+[difftool]
+  prompt = false
+[difftool "vscode"]
+  cmd = code --wait --diff "$LOCAL" "$REMOTE"
+[fetch]
+  prune = true
+  pruneTags = true
+[gpg]
+  format = ssh
+[init]
+  defaultBranch = main
+[log]
+  date = iso-local
+[merge]
+  tool = vscode
+[mergetool]
+  keepBackup = false
+  keepTemporaries = false
+  prompt = false
+[mergetool "vscode"]
+  cmd = code --wait "$MERGED"
+[pretty]
+  log = %C(bold red)%h %C(bold blue)%ad %C(bold cyan)%aN%C(auto):%d %s
+  reflog = %C(bold red)%h %C(bold blue)%gd%C(auto)%d %gs
+[pull]
+  rebase = true
+[push]
+  default = current
+  followTags = true
+  recurseSubmodules = on-demand
+[rebase]
+  autoSquash = true
+  autoStash = true
+  missingCommitsCheck = warn
+[rerere]
+  enabled = true
+[status]
+  branch = true
+  showStash = true
+  showUntrackedFiles = all
+[submodule]
+  fetchJobs = 16
+[tag]
+  gpgSign = true
+[user]
+  email = 16730571+PotatoMaster101@users.noreply.github.com
+  name = PotatoMaster101
+  signingKey = ~/.ssh/keys/id_ed25519_github_sign
+
+# uncomment below for SSH instead of HTTPS
+# [url "git@github.com:"]
+#   insteadOf = https://github.com/
+
+# uncomment below for Windows
+# [gpg "ssh"]
+#   program = C:/Windows/System32/OpenSSH/ssh-keygen.exe

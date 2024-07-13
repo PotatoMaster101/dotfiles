@@ -1,0 +1,125 @@
+[alias]
+	a = add
+	aa = add -A
+	aam = !git add -A && git commit -am
+	ap = add -p
+	b = branch
+	bd = branch -D
+	bm = branch -m
+	br = branch -r
+	bu = branch -u
+	c = commit
+	ca = commit -a
+	cad = commit -a --amend
+	cadn = commit -a --amend --no-edit
+	caf = commit -a --fixup
+	cam = commit -am
+	ccc = clean -f -d
+	cccc = clean -f -d -x
+	cd = commit --amend
+	cdn = commit --amend --no-edit
+	cf = commit --fixup
+	cl = clone --recurse-submodules
+	cm = commit -m
+	co = checkout
+	cob = checkout -b
+	cobm = checkout --track origin/main -b
+	cp = cherry-pick
+	cpa = cherry-pick --abort
+	cpc = cherry-pick --continue
+	cpn = cherry-pick -n
+	cpq = cherry-pick --quit
+	cps = cherry-pick --skip
+	cpx = cherry-pick -x
+	df = diff
+	dt = difftool
+	l = log --reverse --oneline --date=format:'%d/%m/%Y' --pretty=log
+	lf = log --reverse --oneline --date=format:'%d/%m/%Y' --pretty=log --follow
+	lg = log --reverse --oneline --date=format:'%d/%m/%Y' --pretty=log -i --grep
+	ll = log --reverse --oneline --date=format:'%d/%m/%Y' --pretty=log -50 --no-merges
+	mt = mergetool
+	pl = pull --no-recurse-submodules
+	plm = pull origin main --no-recurse-submodules
+	plmn = pull origin main --no-recurse-submodules --no-rebase
+	pln = pull --no-recurse-submodules --no-rebase
+	ps = push
+	psf = push -f origin HEAD
+	psu = push -u origin HEAD
+	r = reset
+	radd = remote add
+	rb = rebase
+	rba = rebase --abort
+	rbc = rebase --continue
+	rbi = rebase -i
+	rbq = rebase --quit
+	rh = reset --hard
+	rl = reflog --pretty=reflog
+	rll = reflog --pretty=reflog -20
+	rv = remote -v
+	s = status
+	sb = submodule
+	sbu = submodule update --rebase --remote
+	sh = show
+	shq = show --oneline --date=format:'%d/%m/%Y' --pretty=log --name-status
+	sta = stash apply
+	std = stash drop
+	stl = stash list
+	stp = stash pop
+	stu = stash -u
+	t = tag
+[blame]
+	coloring = highlightRecent
+	date = format:%d/%m/%Y
+[branch]
+	autoSetupMerge = always
+	autoSetupRebase = always
+[clean]
+	requireForce = false
+[core]
+	autocrlf = input
+	editor = code --wait
+	eol = lf
+	pager = cat
+[diff]
+	tool = vscode
+[difftool]
+	prompt = false
+[difftool "vscode"]
+	cmd = code --wait --diff "$LOCAL" "$REMOTE"
+[fetch]
+	prune = true
+	pruneTags = true
+[init]
+	defaultBranch = main
+[log]
+	date = iso-local
+[merge]
+	tool = vscode
+[mergetool]
+	keepBackup = false
+	keepTemporaries = false
+	prompt = false
+[mergetool "vscode"]
+	cmd = code --wait "$MERGED"
+[pretty]
+	log = %C(bold red)%h %C(bold blue)%ad %C(bold cyan)%aN%C(auto):%d %s
+	reflog = %C(bold red)%h %C(bold blue)%gd%C(auto)%d %gs
+[pull]
+	rebase = true
+[push]
+	default = current
+	followTags = true
+	recurseSubmodules = on-demand
+[rebase]
+	autoSquash = true
+	autoStash = true
+	missingCommitsCheck = warn
+[rerere]
+	enabled = true
+[status]
+	showStash = true
+[submodule]
+	fetchJobs = 16
+[user]
+	email = 16730571+PotatoMaster101@users.noreply.github.com
+	name = PotatoMaster101

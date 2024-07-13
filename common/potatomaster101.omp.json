@@ -1,0 +1,96 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background": "#334756",
+          "foreground": "#FFFFFF",
+          "style": "diamond",
+          "template": " {{.Icon}} {{ if .WSL }}(WSL) {{ end }}",
+          "trailing_diamond": "\ue0b0",
+          "type": "os"
+        },
+        {
+          "background": "#800D5D",
+          "foreground": "#FFFFFF",
+          "leading_diamond": "<transparent>\ue0b0</>",
+          "options": {
+            "folder_separator_icon": " \ue0b1 ",
+            "home_icon": "~",
+            "style": "folder"
+          },
+          "style": "diamond",
+          "template": " \uea83 {{ .Path }} ",
+          "trailing_diamond": "\ue0b0",
+          "type": "path"
+        },
+        {
+          "background": "#1A4DAD",
+          "foreground": "#FFFFFF",
+          "leading_diamond": "<transparent>\ue0b0</>",
+          "options": {
+            "time_format": "15:04"
+          },
+          "style": "diamond",
+          "template": " {{ .CurrentDate | date .Format }} ",
+          "trailing_diamond": "\ue0b0",
+          "type": "time"
+        },
+        {
+          "background": "#906cff",
+          "foreground": "#100e23",
+          "leading_diamond": "<transparent>\ue0b0</>",
+          "style": "diamond",
+          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
+          "trailing_diamond": "\ue0b0",
+          "type": "python"
+        },
+        {
+          "background": "#89DBAB",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#FFFB38{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#FF7048{{ end }}",
+            "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
+            "{{ if gt .Behind 0 }}#B388FF{{ end }}"
+          ],
+          "foreground": "#242424",
+          "leading_diamond": "<transparent>\ue0b0</>",
+          "options": {
+            "fetch_bare_info": true,
+            "fetch_push_status": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "fetch_user": true
+          },
+          "style": "diamond",
+          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
+          "trailing_diamond": "\ue0b0",
+          "type": "git"
+        },
+        {
+          "background": "#FF0000",
+          "foreground": "#FFFFFF",
+          "leading_diamond": "<transparent>\ue0b0</>",
+          "style": "diamond",
+          "template": " \uf0e7 ",
+          "trailing_diamond": "\ue0b0",
+          "type": "root"
+        },
+        {
+          "background": "#FF0000",
+          "foreground": "#FFFFFF",
+          "leading_diamond": "<transparent>\ue0b0</>",
+          "style": "diamond",
+          "template": " \uf00d ",
+          "trailing_diamond": "\ue0b0",
+          "type": "status"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 2
+}

@@ -1,0 +1,5 @@
+# Git
+Host gh
+    Hostname "github.com"
+    IdentityFile "~/.ssh/keys/id_ed25519_gh"
+    User "git"
